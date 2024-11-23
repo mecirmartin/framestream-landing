@@ -1,5 +1,7 @@
-import React from "react"
-import { Container } from "@/components/Container"
+"use client";
+
+import React from "react";
+import { Container } from "@/components/Container";
 
 export const Cta = () => {
   return (
@@ -13,17 +15,18 @@ export const Cta = () => {
             We will be happy to talk to you.
           </p>
         </div>
-        <div className="flex-shrink-0 w-full text-center lg:w-auto">
-          <a
-            href="https://github.com/web3templates"
-            target="_blank"
-            rel="noopener"
-            className="inline-block py-3 mx-auto text-lg font-medium text-center text-red-600 bg-white rounded-md px-7 lg:px-10 lg:py-5 "
-          >
+        <button
+          className="flex-shrink-0 w-full text-center lg:w-auto"
+          onClick={() => {
+            window.location.href =
+              "mailto:mecir.martin@gmail.com?subject=Framestream%20questions&body=Help%20me%20have%20closer%20relationship%20with%20my%20audience";
+          }}
+        >
+          <div className="inline-block py-3 mx-auto text-lg font-medium text-center text-red-600 bg-white rounded-md px-7 lg:px-10 lg:py-5 ">
             Contact us
-          </a>
-        </div>
+          </div>
+        </button>
       </div>
     </Container>
-  )
-}
+  );
+};

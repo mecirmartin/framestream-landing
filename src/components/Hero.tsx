@@ -1,6 +1,8 @@
-import Image from "next/image"
-import { Container } from "@/components/Container"
-import heroImg from "../../public/img/hero-2.png"
+"use client";
+
+import Image from "next/image";
+import { Container } from "@/components/Container";
+import heroImg from "../../public/img/hero-2.png";
 
 export const Hero = () => {
   return (
@@ -12,22 +14,22 @@ export const Hero = () => {
               Turn your user data to personalized shorts
             </h1>
             <p className="py-5 text-xl leading-normal text-gray-500 lg:text-xl xl:text-2xl dark:text-gray-300">
-              Use Framestream to turn your user data to personalized shorts that
-              resonate with your audience. With powerful customization, you can
-              create standout videos that boost engagement, grow your following,
-              and create closer relationship with your customer — one Short at a
-              time.
+              Use Framestream to turn your user data to personalized shorts that resonate with your
+              audience. With powerful customization, you can create standout videos that boost
+              engagement, grow your following, and create closer relationship with your customer —
+              one Short at a time.
             </p>
 
             <div className="flex flex-col items-start space-y-3 sm:space-x-4 sm:space-y-0 sm:items-center sm:flex-row">
-              <a
-                href="https://web3templates.com/templates/nextly-landing-page-template-for-startups"
-                target="_blank"
-                rel="noopener"
+              <button
                 className="px-8 py-4 text-lg font-medium text-center text-white bg-red-600 rounded-md "
+                onClick={() => {
+                  window.location.href =
+                    "mailto:mecir.martin@gmail.com?subject=Framestream%20questions&body=Help%20me%20have%20closer%20relationship%20with%20my%20audience";
+                }}
               >
                 Contact us
-              </a>
+              </button>
               {/* <a
                 href="https://github.com/web3templates/nextly-template/"
                 target="_blank"
@@ -93,8 +95,8 @@ export const Hero = () => {
         </div>
       </Container> */}
     </>
-  )
-}
+  );
+};
 
 function AmazonLogo() {
   return (
@@ -124,7 +126,7 @@ function AmazonLogo() {
         </clipPath>
       </defs>
     </svg>
-  )
+  );
 }
 
 function MicrosoftLogo() {
@@ -147,7 +149,7 @@ function MicrosoftLogo() {
         clipRule="evenodd"
       ></path>
     </svg>
-  )
+  );
 }
 
 function NetflixLogo() {
@@ -166,17 +168,12 @@ function NetflixLogo() {
         ></path>
       </g>
     </svg>
-  )
+  );
 }
 
 function SonyLogo() {
   return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="136"
-      height="24"
-      viewBox="0 0 351 61"
-    >
+    <svg xmlns="http://www.w3.org/2000/svg" width="136" height="24" viewBox="0 0 351 61">
       <g fill="none" fillRule="evenodd" stroke="none" strokeWidth="1">
         <g fill="currentColor" fillRule="nonzero">
           <path d="M345.559 49.001a5.448 5.448 0 00-4.81 2.72 5.538 5.538 0 000 5.559 5.448 5.448 0 004.81 2.719 5.425 5.425 0 003.855-1.618A5.513 5.513 0 00351 54.487c0-1.454-.573-2.85-1.593-3.879a5.42 5.42 0 00-3.848-1.607zm0 10.337a4.774 4.774 0 01-3.4-1.42 4.85 4.85 0 01-1.399-3.43c0-1.282.507-2.51 1.407-3.415a4.768 4.768 0 013.392-1.409c1.269 0 2.485.509 3.383 1.413a4.84 4.84 0 011.4 3.41 4.847 4.847 0 01-1.393 3.427 4.77 4.77 0 01-3.39 1.424z"></path>
@@ -184,17 +181,12 @@ function SonyLogo() {
         </g>
       </g>
     </svg>
-  )
+  );
 }
 
 function VerizonLogo() {
   return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="138"
-      height="31"
-      viewBox="0 0 658 146"
-    >
+    <svg xmlns="http://www.w3.org/2000/svg" width="138" height="31" viewBox="0 0 658 146">
       <g fill="none" fillRule="evenodd" stroke="none" strokeWidth="1">
         <g>
           <path
@@ -209,5 +201,5 @@ function VerizonLogo() {
         </g>
       </g>
     </svg>
-  )
+  );
 }

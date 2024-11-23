@@ -1,13 +1,13 @@
-"use client"
-import Link from "next/link"
-import ThemeChanger from "./DarkSwitch"
-import Image from "next/image"
-import { Disclosure } from "@headlessui/react"
-import { useTheme } from "next-themes"
+"use client";
+import Link from "next/link";
+import ThemeChanger from "./DarkSwitch";
+import Image from "next/image";
+import { Disclosure } from "@headlessui/react";
+import { useTheme } from "next-themes";
 
 export const Navbar = () => {
-  const navigation: string[] = []
-  const { theme } = useTheme()
+  const navigation: string[] = [];
+  const { theme } = useTheme();
 
   return (
     <div className="w-full">
@@ -17,11 +17,7 @@ export const Navbar = () => {
           <span className="flex items-center space-x-2 text-2xl font-medium text-red-500 dark:text-gray-100">
             <span>
               <Image
-                src={
-                  theme === "light"
-                    ? "/img/logo-white.png"
-                    : "/img/logo-black.png"
-                }
+                src={theme === "light" ? "/img/logo-white.png" : "/img/logo-black.png"}
                 width="220"
                 alt="Framestream"
                 height="220"
@@ -34,12 +30,15 @@ export const Navbar = () => {
         <div className="gap-3 nav__item mr-2 lg:flex ml-auto lg:ml-0 lg:order-2">
           <ThemeChanger />
           <div className="hidden mr-3 lg:flex nav__item">
-            <Link
-              href="/"
+            <button
+              onClick={() => {
+                window.location.href =
+                  "mailto:mecir.martin@gmail.com?subject=Framestream%20questions&body=Help%20me%20have%20closer%20relationship%20with%20my%20audience";
+              }}
               className="px-6 py-2 text-white bg-red-600 rounded-md md:ml-5"
             >
               Contact us
-            </Link>
+            </button>
           </div>
         </div>
 
@@ -111,5 +110,5 @@ export const Navbar = () => {
         </div>
       </nav>
     </div>
-  )
-}
+  );
+};
