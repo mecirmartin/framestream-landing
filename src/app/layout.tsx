@@ -21,12 +21,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={inter.className}>
+      <body className={inter.className} style={{ width: "auto" }}>
         <ThemeProvider attribute="class">
           <Navbar />
           <div>{children}</div>
           <Footer />
-          <PopupWidget />
         </ThemeProvider>
       </body>
     </html>

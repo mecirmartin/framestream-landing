@@ -1,19 +1,19 @@
-"use client"
-import { useState } from "react"
-import { Container } from "@/components/Container"
+"use client";
+import { useState } from "react";
+import { Container } from "@/components/Container";
 
 interface VideoProps {
-  videoId: string
+  videoId: string;
 }
 
 export function Video({ videoId }: Readonly<VideoProps>) {
-  const [playVideo, setPlayVideo] = useState(false)
+  const [playVideo, setPlayVideo] = useState(false);
 
-  if (!videoId) return null
+  if (!videoId) return null;
 
   return (
     <Container>
-      <div className="relative w-[540px] h-[960px] max-w-4xl mx-auto overflow-hidden lg:mb-20 rounded-2xl bg-red-300 cursor-pointer bg-gradient-to-tr from-red-400 to-red-700">
+      <div className="relative min-w-[320px] min-h-[569px] max-w-[540px] mx-auto overflow-hidden lg:mb-20 rounded-2xl bg-red-300 cursor-pointer bg-gradient-to-tr from-red-400 to-red-700">
         {!playVideo && (
           <button
             onClick={() => setPlayVideo(!playVideo)}
@@ -42,5 +42,5 @@ export function Video({ videoId }: Readonly<VideoProps>) {
         )}
       </div>
     </Container>
-  )
+  );
 }
