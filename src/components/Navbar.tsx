@@ -7,7 +7,7 @@ import { useTheme } from "next-themes";
 
 export const Navbar = () => {
   const navigation: string[] = [];
-  const { theme } = useTheme();
+  const { resolvedTheme } = useTheme();
 
   return (
     <div className="w-full">
@@ -17,7 +17,7 @@ export const Navbar = () => {
           <span className="flex items-center space-x-2 text-2xl font-medium text-red-500 dark:text-gray-100">
             <span>
               <Image
-                src={theme === "light" ? "/img/logo-white.png" : "/img/logo-black.png"}
+                src={resolvedTheme === "dark" ? "/img/logo-black.png" : "/img/logo-white.png"}
                 width="220"
                 alt="Framestream"
                 height="220"
