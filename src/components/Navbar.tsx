@@ -4,27 +4,35 @@ import ThemeChanger from "./DarkSwitch";
 import Image from "next/image";
 import { Disclosure } from "@headlessui/react";
 import { useTheme } from "next-themes";
+import { useState, useEffect } from "react";
 
 export const Navbar = () => {
   const navigation: string[] = [];
   const { resolvedTheme } = useTheme();
 
+  const [mounted, setMounted] = useState(false);
+
+  // When mounted on client, now we can show the UI
+  useEffect(() => setMounted(true), []);
+
   return (
     <div className="w-full">
       <nav className="container relative flex flex-wrap items-center justify-between p-8 mx-auto lg:justify-between xl:px-1">
         {/* Logo  */}
-        <Link href="/">
-          <span className="flex items-center space-x-2 text-2xl font-medium text-red-500 dark:text-gray-100">
-            <span>
-              <Image
-                src={resolvedTheme === "dark" ? "/img/logo-black.png" : "/img/logo-white.png"}
-                width="220"
-                alt="Framestream"
-                height="220"
-              />
+        {mounted && resolvedTheme && (
+          <Link href="/">
+            <span className="flex items-center space-x-2 text-2xl font-medium text-red-500 dark:text-gray-100">
+              <span>
+                <Image
+                  src={resolvedTheme === "dark" ? "/img/logo-black.png" : "/img/logo-white.png"}
+                  width="220"
+                  alt="Framestream"
+                  height="220"
+                />
+              </span>
             </span>
-          </span>
-        </Link>
+          </Link>
+        )}
 
         {/* get started  */}
         <div className="gap-3 nav__item mr-2 lg:flex ml-auto lg:ml-0 lg:order-2">
